@@ -34,34 +34,48 @@
   </nav>
   <main>
     <div id="section1" class="seccion">
-      <h3>Sección 1</h3>
+      <h1>Sección 1</h1>
+      <h3>Reloj digital y Alarma sonora</h3>
+      <div class="box-btns">
+        <button class="init-clock">Inicar Reloj</button>
+        <button class="stop-clock" disabled>Detener Reloj</button>
+        <button class="init-alarm">Iniciar Alarma</button>
+        <button class="stop-alarm" disabled>Detener Alarma</button>
+      </div>
+      <form name="form_reloj" class="form-clock" style="display:none;">
+        <input type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
+      </form>
+      <div class="box-audio">
+        <audio src="./src/alarma.mp3" loop></audio>
+      </div>
+   
     </div>
     <div id="section2" class="seccion">
-      <h3>Sección 2</h3>
+      <h1>Sección 2</h1>
     </div>
     <div id="section3" class="seccion">
-      <h3>Sección 3</h3>
+      <h1>Sección 3</h1>
     </div>
     <div id="section4" class="seccion">
-      <h3>Sección 4</h3>
+      <h1>Sección 4</h1>
     </div>
     <div id="section5" class="seccion">
-      <h3>Sección 5</h3>
+      <h1>Sección 5</h1>
     </div>
     <div id="section6" class="seccion">
-      <h3>Sección 6</h3>
+      <h1>Sección 6</h1>
     </div>
     <div id="section7" class="seccion">
-      <h3>Sección 7</h3>
+      <h1>Sección 7</h1>
     </div>
     <div id="section8" class="seccion">
-      <h3>Sección 8</h3>
+      <h1>Sección 8</h1>
     </div>
     <div id="section9" class="seccion">
-      <h3>Sección 9</h3>
+      <h1>Sección 9</h1>
     </div>
     <div id="section10" class="seccion">
-      <h3>Sección 10</h3>
+      <h1>Sección 10</h1>
     </div>
   </main>
   
