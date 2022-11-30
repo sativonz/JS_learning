@@ -1,0 +1,22 @@
+.selected {
+    color:red;
+}
+
+.container-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.container-bottom {
+    text-align: center;
+    border: 1px solid orange;
+    padding-bottom: 30px;
+    margin-top: 50px;
+}
+
+.container-total > div,
+ul.fibra li {
+    text-transform: uppercase;
+}
