@@ -20,9 +20,9 @@
   </header>
   <nav class="elements-menu">
     <ul>
-      <li><a href="#section1">Sección 1</a></li>
-      <li><a href="#section2">Sección 2</a></li>
-      <li><a href="#section3">Sección 3</a></li>
+      <li><a href="#section1">Reloj digital y Alarma sonora</a></li>
+      <li><a href="#section2">Eventos del teclado</a></li>
+      <li><a href="#section3">Countdown</a></li>
       <li><a href="#section4">Sección 4</a></li>
       <li><a href="#section5">Sección 5</a></li>
       <li><a href="#section6">Sección 6</a></li>
@@ -42,19 +42,25 @@
         <button class="init-alarm">Iniciar Alarma</button>
         <button class="stop-alarm" disabled>Detener Alarma</button>
       </div>
-      <form name="form_reloj" class="form-clock" style="display:none;">
+      <!-- <form name="form_reloj" class="form-clock" style="display:none;">
         <input type="text" name="reloj" size="10" onfocus="window.document.form_reloj.reloj.blur()">
-      </form>
+      </form> -->
+      <div class="form-clock" style="display:none;"></div>
       <div class="box-audio">
-        <audio src="./src/alarma.mp3" loop></audio>
+        <audio src="./src/alarma.mp3" loop controls style="display:none;"></audio>
       </div>
    
     </div>
     <div id="section2" class="seccion">
       <h1>Sección 2</h1>
+      <h3>Eventos del teclado</h3>
+      <article class="stage">
+        <div class="ball"></div>
+      </article>
     </div>
     <div id="section3" class="seccion">
       <h1>Sección 3</h1>
+      <div id="countdown"></div>
     </div>
     <div id="section4" class="seccion">
       <h1>Sección 4</h1>
