@@ -245,6 +245,7 @@ h1 {
   min-height: 50vh;
   background-color: var(--second-color);
   min-width: calc(100% - 60px);
+  outline: 5px solid white;
 }
 
 .stage .ball {
@@ -253,4 +254,62 @@ h1 {
   height: 50px;
   border-radius: 50%;
   background-color: var(--main-color);
+}
+
+/* Go to top */
+button.goToTop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--main-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+  opacity: 1;
+}
+
+button.goToTop:hover{
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+button.goToTop span {
+  font-size: 30px;
+}
+
+button.goToTop.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+button.dark-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  border: none;
+  background: var(--second-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--main-color);
+}
+
+.dark-theme {
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+.dark-theme header h1 {
+  color:var(--second-color);
 }

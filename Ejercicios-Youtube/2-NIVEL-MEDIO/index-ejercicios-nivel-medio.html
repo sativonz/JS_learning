@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-dark>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <title>Ejercicios de Programación en JavaScript nivel medio</title>
 </head>
 
-<body>
+<body data-dark>
   <header>
     <h1>Ejercicios del DOM</h1>
     <div id="menu" class="hamburger js-hamburger">
@@ -23,7 +24,7 @@
       <li><a href="#section1">Reloj digital y Alarma sonora</a></li>
       <li><a href="#section2">Eventos del teclado</a></li>
       <li><a href="#section3">Countdown</a></li>
-      <li><a href="#section4">Sección 4</a></li>
+      <li><a href="#section4">Responsive con JS</a></li>
       <li><a href="#section5">Sección 5</a></li>
       <li><a href="#section6">Sección 6</a></li>
       <li><a href="#section7">Sección 7</a></li>
@@ -64,6 +65,8 @@
     </div>
     <div id="section4" class="seccion">
       <h1>Sección 4</h1>
+      <div id="youtube"></div>
+      <div id="gmaps"></div>
     </div>
     <div id="section5" class="seccion">
       <h1>Sección 5</h1>
@@ -85,7 +88,10 @@
     </div>
   </main>
   
-
+<button class="goToTop hidden">
+  <span class="material-symbols-outlined">&#xe316;</span>
+</button>
+<button class="dark-btn" type="button">🌙</button>
 <script src="scripts/main.js" type="module"></script>
 </body>
 
