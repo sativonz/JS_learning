@@ -15,6 +15,6 @@ export default function responsiveMedia(id, mq, mobileContent, desktopContent){
 
     breakpoint.addEventListener("change", responsive);
     
-    responsive(breakpointw);
+    responsive(breakpoint);
 
 }

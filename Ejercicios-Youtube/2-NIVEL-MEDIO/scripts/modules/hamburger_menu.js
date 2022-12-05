@@ -7,7 +7,7 @@ export default function hamburgerMenu(){
     
     d.addEventListener("click", (e)=>{
 
-        if(e.target.matches(".hamburger *") || e.target.matches("a")){
+        if(e.target.matches(".hamburger *") || e.target.matches(".elements-menu a")){
             openCloseMenu();
         } 
         

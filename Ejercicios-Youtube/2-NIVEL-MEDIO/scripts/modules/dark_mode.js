@@ -12,7 +12,7 @@ export function darkMode(btn, classDark) {
 }
 
 export function activeDarkTheme({ btn, classDark, isChanged = false }) {
-  console.log("ver",isChanged);
+  //console.log("ver",isChanged);
   const $btnDark = d.querySelector(btn),
         $selectors = d.querySelectorAll("[data-dark]");
 

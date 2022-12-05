@@ -313,3 +313,25 @@ button.dark-btn {
 .dark-theme header h1 {
   color:var(--second-color);
 }
+
+/* Network Status */
+
+.network-notification {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  width: 35%;
+}
+
+.online {
+  background-color: #1b5e20;
+}
+
+.offline {
+  background-color: #b71c1c;
+}
