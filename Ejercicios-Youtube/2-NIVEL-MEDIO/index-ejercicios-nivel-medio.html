@@ -30,11 +30,37 @@
       <li><a href="#section7">Status Network</a></li>
       <li><a href="#section8">Detección camara web</a></li>
       <li><a href="#section9">Geolocalización</a></li>
-      <li><a href="#section10">Sección 10</a></li>
+      <li><a href="#section10">Filtro de búsquedas</a></li>
+      <li><a href="#section11">Sorteo digital</a></li>
+      <li><a href="#section12">Responsive Slider</a></li>
+      <li><a href="#section13">IntersectionObserver</a></li>
+      <li><a href="#section14">Element is on top of...?</a></li>
+      <li><a href="#section15">Section 15</a></li>
+      <li><a href="#section16">Section 16</a></li>
+    </ul>
+  </nav>
+  <nav class="scrollspy">
+    <ul>
+      <li><a data-scroll-spy href="#section1">Reloj digital y Alarma sonora</a></li>
+      <li><a data-scroll-spy href="#section2">Eventos del teclado</a></li>
+      <li><a data-scroll-spy href="#section3">Countdown</a></li>
+      <li><a data-scroll-spy href="#section4">Responsive con JS</a></li>
+      <li><a data-scroll-spy href="#section5">Responsive tester</a></li>
+      <li><a data-scroll-spy href="#section6">Detección dispositivos</a></li>
+      <li><a data-scroll-spy href="#section7">Status Network</a></li>
+      <li><a data-scroll-spy href="#section8">Detección camara web</a></li>
+      <li><a data-scroll-spy href="#section9">Geolocalización</a></li>
+      <li><a data-scroll-spy href="#section10">Filtro de búsquedas</a></li>
+      <li><a data-scroll-spy href="#section11">Sorteo digital</a></li>
+      <li><a data-scroll-spy href="#section12">Responsive Slider</a></li>
+      <li><a data-scroll-spy href="#section13">IntersectionObserver</a></li>
+      <li><a data-scroll-spy href="#section14">Element is on top of...?</a></li>
+      <li><a data-scroll-spy href="#section15">Seccion 15</a></li>
+      <li><a data-scroll-spy href="#section16">Seccion 16</a></li>
     </ul>
   </nav>
   <main>
-    <div id="section1" class="seccion">
+    <div id="section1" class="seccion" data-scroll-spy>
       <h1>Sección 1</h1>
       <h3>Reloj digital y Alarma sonora</h3>
       <div class="box-btns">
@@ -52,25 +78,25 @@
       </div>
    
     </div>
-    <div id="section2" class="seccion">
+    <div id="section2" class="seccion" data-scroll-spy> 
       <h1>Sección 2</h1>
       <h3>Eventos del teclado</h3>
       <article class="stage">
         <div class="ball"></div>
       </article>
     </div>
-    <div id="section3" class="seccion">
+    <div id="section3" class="seccion" data-scroll-spy>
       <h1>Sección 3</h1>
       <h3>Cuenta atrás</h3>
       <div id="countdown"></div>
     </div>
-    <div id="section4" class="seccion">
+    <div id="section4" class="seccion" data-scroll-spy>
       <h1>Sección 4</h1>
       <h3>Responsive JS</h3>
       <div id="youtube"></div>
       <div id="gmaps"></div>
     </div>
-    <div id="section5" class="seccion">
+    <div id="section5" class="seccion" data-scroll-spy>
       <h1>Sección 5</h1>
       <h3>Responsive tester</h3>
       <form id="responsive-tester">
@@ -84,28 +110,120 @@
         <input name="cerrar" type="button" value="Cerrar">
       </form>
     </div>
-    <div id="section6" class="seccion">
+    <div id="section6" class="seccion" data-scroll-spy>
       <h1>Sección 6</h1>
       <h3>Detección dispositivos<br>User Agent</h3>
       <div id="user-device"></div>
     </div>
-    <div id="section7" class="seccion">
+    <div id="section7" class="seccion" data-scroll-spy>
       <h1>Sección 7</h1>
       <h3>Status Network</h3>
     </div>
-    <div id="section8" class="seccion">
+    <div id="section8" class="seccion" data-scroll-spy>
       <h1>Sección 8</h1>
       <h3>Detección camara web</h3>
       <video id="webcam"></video>
     </div>
-    <div id="section9" class="seccion">
+    <div id="section9" class="seccion" data-scroll-spy>
       <h1>Sección 9</h1>
       <h3>Geolocalización</h3>
       <h5>Tu posición actual es:</h5>
       <div id="geolocation"></div>
     </div>
-    <div id="section10" class="seccion">
+    <div id="section10" class="seccion" data-scroll-spy>
       <h1>Sección 10</h1>
+      <h3>Filtros de búsquedas</h3>
+      <div class="boxSearch">
+        <input type="text" id="filter-cards" name="filterCards" placeholder="Buscar...">
+        <span class="material-symbols-outlined">&#xe5cd;</span>
+      </div>
+      <section id="gallery-cards">
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/nature" alt="Nature">
+          <figcaption>Nature</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/tech" alt="Tech">
+          <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/animals" alt="Animals">
+          <figcaption>Animals</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/arch" alt="Architecture">
+          <figcaption>Architecture</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/people" alt="People">
+          <figcaption>People</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/nature" alt="Nature">
+          <figcaption>Nature</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="https://placeimg.com/200/200/animals" alt="Animals">
+          <figcaption>Animals</figcaption>
+        </figure>
+      </section>
+    </div>
+    <div id="section11" class="seccion" data-scroll-spy>
+      <h1>Sección 11</h1>
+      <h3>Sorteo digital</h3>
+      <div id="box-sorteo"></div>
+    </div>
+    <div id="section12" class="seccion" data-scroll-spy>
+      <h1>Sección 12</h1>
+      <h3>Responsive Slider</h3>
+      <div class="slider">
+        <div class="slider-slides">
+          <div class="slider-slide active">
+            <img src="https://placeimg.com/500/500/animals" alt="Animals">
+            <h4>Diapositiva 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in aliquam neque. Nam mattis orci id risus pulvinar condimentum. Duis volutpat tortor et urna pulvinar, et tincidunt sem porta.</p>
+          </div>
+          <div class="slider-slide">
+            <img src="https://placeimg.com/500/500/nature" alt="Nature">
+            <h4>Diapositiva 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in aliquam neque. Nam mattis orci id risus pulvinar condimentum. Duis volutpat tortor et urna pulvinar, et tincidunt sem porta.</p>
+          </div>
+          <div class="slider-slide">
+            <img src="https://placeimg.com/500/500/arch" alt="Architecture">
+            <h4>Diapositiva 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in aliquam neque. Nam mattis orci id risus pulvinar condimentum. Duis volutpat tortor et urna pulvinar, et tincidunt sem porta.</p>
+          </div>
+          <div class="slider-slide">
+            <img src="https://placeimg.com/500/500/tech" alt="Tech">
+            <h4>Diapositiva 4</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in aliquam neque. Nam mattis orci id risus pulvinar condimentum. Duis volutpat tortor et urna pulvinar, et tincidunt sem porta.</p>
+          </div>
+        </div>
+        <div class="slider-btns">
+          <span class="prev" href="#">&laquo;</span>
+          <span class="next" href="#">&raquo;</span>
+        </div>
+      </div>
+    </div>
+    <div id="section13" class="seccion" data-scroll-spy>
+      <h1>Sección 13</h1>
+      <h3>IntersectionObserver</h3>
+      <div class="IO-box">
+        <video src="./src/IMG_2705.MP4" loop controls muted></video>
+      </div>
+      
+    </div>
+    <div id="section14" class="seccion" data-scroll-spy>
+      <h1>Sección 14</h1>
+      <h3>Element is on top of?</h3>
+      
+      
+    </div>
+    <div id="section15" class="seccion" data-scroll-spy>
+      <h1>Sección 15</h1>
+    </div>
+    <div id="section16" class="seccion" data-scroll-spy>
+      <h1>Sección 16</h1>
     </div>
   </main>
   

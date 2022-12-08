@@ -167,8 +167,9 @@ nav.elements-menu.open {
   transition: transform 0.3s ease, opacity 0.8s ease;
   transform: translate(0, 0);
   left: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   opacity: 1;
+  z-index: 99;
 }
 
 nav.elements-menu.open ul {
@@ -189,7 +190,7 @@ nav.elements-menu.open ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 135px;
+  height: 100px;
 }
 
 nav.elements-menu.open ul li:hover {
@@ -262,7 +263,7 @@ button.goToTop {
   height: 50px;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 85px;
   background: var(--main-color);
   border: none;
   border-radius: 50%;
@@ -334,4 +335,199 @@ button.dark-btn {
 
 .offline {
   background-color: #b71c1c;
+}
+
+/* filters */
+
+figure.gallery-card {
+  border: 1px solid black;
+  font-weight: bold;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease-out;
+}
+section#gallery-cards {
+  display: flex; 
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+figure.gallery-card.hide {
+  opacity: 0;
+  visibility: hidden;
+  order: 1;
+}
+
+.boxSearch span {
+  position: absolute;
+  right: 0;
+  font-size: 21px;
+  color: var(--second-color);
+  cursor: pointer;
+}
+
+.boxSearch {
+  position: relative;
+}
+
+/* Responsive slider */
+
+.slider {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slider-slides {
+  position: relative;
+  height: 500px;
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slider-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-slide img{
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: 50% 0%;
+  /* object-fit: contain; */
+}
+
+.slider-btns {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between ;
+}
+
+.slider-btns span {
+  cursor: pointer;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: thin solid #000;
+  text-decoration: none;
+  background-color: white;
+  color: #000;
+  transition: all 0.03s ease;
+}
+
+.slider-btns a:hover {
+  color: #4d4d4d;
+}
+
+/* Scroll Spy */
+@media screen and (min-width: 1024px) {
+
+  body {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows:  4rem auto;
+    grid-template-areas: "header header" "main panel";
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav.scrollspy {
+    grid-area: panel;
+    position: fixed;
+    top: 80px;
+    background-color: var(--second-color);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+    right: 0;
+    width: 20%;
+    bottom: 0;
+  }
+
+  nav.scrollspy ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    top: 80px;
+  }
+
+  nav.scrollspy ul li {
+    list-style: none;
+    height: 30px;
+    padding: 0;
+    margin-left: 0;
+    width: 100%;
+    text-align: right;
+    height: 45px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  nav.scrollspy ul li a {
+    text-decoration: none;
+    color: white;
+    padding-right: 20px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  nav.scrollspy ul li:hover,
+  nav.scrollspy ul li.active {
+  background-color: var(--main-color);
+  cursor: pointer;
+  }
+
+  nav.scrollspy ul li:hover a,
+  nav.scrollspy ul li.active a {
+   color: var(--second-color);
+   font-weight: bold;
+  }
+
+}
+
+
+ /* seccion 13 */
+
+ .IO-box {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.IO-box video {
+  width: 100%;
+}
+
+/* on the top element add class seccion 14*/
+.onTopElement {
+  background-color: red;
 }

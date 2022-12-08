@@ -16,7 +16,7 @@ export default function getGeolocation(id){
     
     const success = position => {
         let coords = position.coords;
-        console.log(position);
+        //console.log(position);
         $boxGeolocation.innerHTML = `Latitud : ${coords.latitude}<br>Longitud: ${coords.longitude}<br>Precisión: ${Math.round(coords.accuracy)} metros
         <br><br><a href="http://www.google.com/maps/@${coords.latitude},${coords.longitude},14z" target="_blank" rel="noopener">Ver en Google maps</a>`;
     };

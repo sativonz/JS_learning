@@ -1,6 +1,6 @@
 import hamburgerMenu from './modules/hamburger_menu.js';
-import {alarmaSonido,relojDigital} from './modules/reloj_digital_y_alarma.js';
-import {moveBall, shortcuts} from './modules/eventos_teclado.js';
+import { alarmaSonido,relojDigital } from './modules/reloj_digital_y_alarma.js';
+import { moveBall, shortcuts } from './modules/eventos_teclado.js';
 import countdown from './modules/countdown.js';
 import goToTop from './modules/go_to_top.js';
 import { darkMode, activeDarkTheme } from "./modules/dark_mode.js";
@@ -10,6 +10,12 @@ import { userAgent } from './modules/deteccion_dispositivos.js';
 import { statusNetwork } from "./modules/status_network.js";
 import webcam from './modules/webcam.js';
 import getGeolocation from './modules/geolocation.js';
+import galleryFilter from './modules/gallery_filter.js';
+import sorteoDigital from './modules/sorteo_digital.js';
+import sliderCarrousel from './modules/slider.js';
+import { scrollSpy } from './modules/scrollSpy.js';
+import { observerVideo } from './modules/intersectionObserver.js';
+import isOnTop from './modules/isOnTop.js';
 
 const d = document;
 
@@ -36,6 +42,12 @@ d.addEventListener('DOMContentLoaded', () =>{
     userAgent("#user-device");
     webcam("webcam");
     getGeolocation("geolocation");
+    galleryFilter("filter-cards", ".gallery-card img");
+    sorteoDigital("box-sorteo");
+    sliderCarrousel();
+    scrollSpy();
+    observerVideo();
+    isOnTop();
 })
 
 d.addEventListener("keydown", (e)=> {
