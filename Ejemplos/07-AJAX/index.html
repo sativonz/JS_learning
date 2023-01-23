@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>AJAX</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <h1>AJAX</h1>
+  <p><em><strong>AJAX</strong></em> no es una tecnología en sí mismo. En realidad, se trata de varias tecnologías independientes que se unen:</p>
+  <ul>
+    <li><strong><em>HTML</em></strong> y <strong><em>CSS</em></strong>, para crear una presentación basada en estándares.</li>
+    <li><strong><em>DOM</em></strong>, para la interacción y manipulación dinámica de la presentación.</li>
+    <li><strong><em>HTML</em></strong>, <strong><em>XML</em></strong> y <strong><em>JSON</em></strong>, para el intercambio y la manipulación de información.</li>
+    <li><strong><em>XMLHttpRequest</em></strong> o <strong><em>Fetch</em></strong>, para el intercambio asíncrono de información.</li>
+    <li><strong><em>JavaScript</em></strong>, para unir todas las demás tecnologías.</li>
+  </ul>
+  <p>Es importante también considerar los <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Status" target="_blank" rel="noopener">Códigos de estado de respuesta <em>HTTP</em></a> y los estados de la petición <em><strong>AJAX</strong></em>:</p>
+  <div class="container-sm table-ajax-states">
+
+    <table>
+    <thead>
+    <tr>
+    <th>Estado</th>
+    <th>Valor</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+    <td><em>READY_STATE_UNINITIALIZED</em></td>
+    <td>0</td>
+    </tr>
+    <tr>
+    <td><em>READY_STATE_LOADING</em></td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td><em>READY_STATE_LOADED</em></td>
+    <td>2</td>
+    </tr>
+    <tr>
+    <td><em>READY_STATE_INTERACTIVE</em></td>
+    <td>3</td>
+    </tr>
+    <tr>
+    <td><em>READY_STATE_COMPLETE</em></td>
+    <td>4</td>
+    </tr>
+    </tbody></table>
+    </div>
+  <br><br>
+  <h2>XML</h2>
+  <ul id="xhr"></ul>
+
+  <h2>FETCH</h2>
+  <ul id="fetch"></ul>
+
+  <h2>FETCH + Async-Await</h2>
+  <ul id="fetch-async"></ul>
+
+  <h2>Axios</h2>
+  <ul id="axios"></ul>
+
+  <h2>Axios + Async-Await</h2>
+  <ul id="axios-async"></ul>
+
+<!-- <script src="01-ajax-api-xml.js" type="text/javascript"></script> -->
+<!-- <script src="02-ajax-api-fetch.js" type="text/javascript"></script> -->
+<!-- <script src="03-ajax-api-fetch-asyn-await.js" type="text/javascript"></script> -->
+
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+<!-- <script src="04-ajax-axios.js" type="text/javascript"></script> -->
+<script src="05-ajax-axios-async-await.js" type="text/javascript"></script>
+</body>
+
+</html>

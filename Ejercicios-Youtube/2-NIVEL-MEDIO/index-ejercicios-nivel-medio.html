@@ -35,7 +35,7 @@
       <li><a href="#section12">Responsive Slider</a></li>
       <li><a href="#section13">IntersectionObserver</a></li>
       <li><a href="#section14">Element is on top of...?</a></li>
-      <li><a href="#section15">Section 15</a></li>
+      <li><a href="#section15">Validación de formularios HTML</a></li>
       <li><a href="#section16">Section 16</a></li>
     </ul>
   </nav>
@@ -55,8 +55,8 @@
       <li><a data-scroll-spy href="#section12">Responsive Slider</a></li>
       <li><a data-scroll-spy href="#section13">IntersectionObserver</a></li>
       <li><a data-scroll-spy href="#section14">Element is on top of...?</a></li>
-      <li><a data-scroll-spy href="#section15">Seccion 15</a></li>
-      <li><a data-scroll-spy href="#section16">Seccion 16</a></li>
+      <li><a data-scroll-spy href="#section15">Validación de formularios HTML</a></li>
+      <li><a data-scroll-spy href="#section16">Narrador de voz</a></li>
     </ul>
   </nav>
   <main>
@@ -221,9 +221,34 @@
     </div>
     <div id="section15" class="seccion" data-scroll-spy>
       <h1>Sección 15</h1>
+      <h3>Validación de formularios HTML</h3>
+      <form class="contact-form" action="https://formsubmit.co/fernandogarciafornes@gmail.com" method="POST" target="_blank">
+        <legend>Envíanos tus comentarios</legend>
+        <input type="text" name="name" placeholder="Escribe tu nombre"
+          title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <input type="email" name="email" placeholder="Escribe tu email" title="Email incorrecto"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <input type="text" name="subject" placeholder="Asunto a tratar" title="El Asunto es requerido" required>
+        <textarea name="comments" rows="5" placeholder="Escribe tus comentarios"
+          title="Tu comentario no debe exceder los 255 caracteres" data-pattern="^[\s\S]{1,255}$" required></textarea>
+        <input type="submit" value="Enviar">
+        <div class="contact-form-loader none">
+          <img src="src/loader.svg" alt="Cargando">
+        </div>
+        <div class="contact-form-response none">
+          <p>Los datos han sido enviados</p>
+        </div>
+      </form>
     </div>
     <div id="section16" class="seccion" data-scroll-spy>
       <h1>Sección 16</h1>
+      <h3>Narrador de voz</h3>
+      <select id="speech-select">
+        <option value="">--- Elige una voz ---</option>
+      </select>
+      <br><br>
+      <textarea id="speech-text" cols="50" rows="5" placeholder="Ingresa texto para leerlo..."></textarea>
+      <button id="speech-btn">Leer texto</button>
     </div>
   </main>
   

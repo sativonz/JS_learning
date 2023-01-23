@@ -16,6 +16,8 @@ import sliderCarrousel from './modules/slider.js';
 import { scrollSpy } from './modules/scrollSpy.js';
 import { observerVideo } from './modules/intersectionObserver.js';
 import isOnTop from './modules/isOnTop.js';
+import contactFormValidations from './modules/validaciones_formulario.js';
+import speechReader from './modules/narrador.js';
 
 const d = document;
 
@@ -48,6 +50,7 @@ d.addEventListener('DOMContentLoaded', () =>{
     scrollSpy();
     observerVideo();
     isOnTop();
+    contactFormValidations();
 })
 
 d.addEventListener("keydown", (e)=> {
@@ -58,3 +61,6 @@ d.addEventListener("keydown", (e)=> {
 activeDarkTheme({btn: ".dark-btn",classDark: "dark-theme"});
 
 statusNetwork();
+
+speechReader();
+
