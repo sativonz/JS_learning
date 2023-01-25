@@ -12,9 +12,49 @@
 </head>
 
 <body>
-  <h1>API REST</h1>
+  <h1>API REST CRUD</h1>
+
+  <section class="crud">
+    <article>
+      <h2 class="crud-title">Agregar Santo</h2>
+      <form class="crud-form">
+        <input type="text" name="nombre" placeholder="Nombre.." required>
+        <br><br>
+        <input type="text" name="constelacion" placeholder="Constelación.." required>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <input type="hidden" name="id">
+      </form>
+    </article>
+    <article>
+      <h2>Ver Santos</h2>
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Constelación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </article>
+  </section>
+  <template id="crud-template">
+    <tr>
+      <td class="name"></td>
+      <td class="constellation"></td>
+      <td>
+        <button class="edit">Editar</button>
+        <button class="delete">Eliminar</button>
+      </td>
+    </tr>
+  </template>
+  </section>
   
-<script src="" type="text/javascript"></script>
+<!-- <script src="js/01-api-rest-crud-ajax.js" type="text/javascript"></script> -->
+<script src="js/02-api-rest-crud-fetch-async-await.js" type="text/javascript"></script>
+<!-- <script src="js/03-api-rest-crud-axios.js" type="text/javascript"></script> -->
 </body>
 
 </html>
