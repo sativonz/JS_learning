@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+nav.menu {
+    display: flex;
+    justify-content: space-between;
+    background: #000000;
+}
+
+nav.menu ul {
+    display: flex;
+    flex-direction: row;
+    padding-right: 15px;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+nav.menu ul li {
+    padding-left: 15px;
+    list-style: none;
+}
+
+nav.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: fantasy;
+}
+
+nav.menu ul li a:hover {
+    color: #c6c6c6;
+}
+
+section,
+main {
+    padding: 0 20px 0 20px;
+}
+
+section#content img {
+    width: 100%;
+}
+
+footer {
+    padding: 0 20px 0 20px;
+}

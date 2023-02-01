@@ -1,3 +1,5 @@
+//Ya devuelve en formato JSON la data no hace falta convertir
+
 (() => {
 
     const $axios = document.getElementById("axios"),
