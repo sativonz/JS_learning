@@ -41,9 +41,11 @@ d.addEventListener("submit", e => {
 
     $loader.classList.remove("none");
 
-    fetch("https://formsubmit.co/ajax/fernandogarciafornes@gmail.com",{
+    //fetch("assets/send_mail.php",{  //-> No funciona en local por el servidor mail
+    fetch("https://handsomest-farm.000webhostapp.com/send_mail.php",{
         method: "POST",
-        body: new FormData($form)
+        body: new FormData($form),
+        mode: "cors"
     })
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
