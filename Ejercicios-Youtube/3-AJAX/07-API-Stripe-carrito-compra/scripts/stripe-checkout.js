@@ -1,3 +1,27 @@
+/* Ejemplo menos practico con fetch y async await:
+async function displayData() {
+  const postsResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts = await postsResponse.json();
+
+  const usersResponse = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await usersResponse.json();
+
+  let output = '';
+  posts.forEach(post => {
+    const user = users.find(user => user.id === post.userId);
+    output += `
+      <div>
+        <h3>${post.title}</h3>
+        <p>${post.body}</p>
+        <h4>Author: ${user.name}</h4>
+      </div>
+    `;
+  });
+
+  document.querySelector('#output').innerHTML = output;
+}
+*/
+
 import stripeKeys from "../scripts/stripe-keys.js";
 import STRIPE_KEYS from "../scripts/stripe-keys.js"
 
