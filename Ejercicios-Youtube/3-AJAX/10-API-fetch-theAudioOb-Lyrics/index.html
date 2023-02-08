@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Buscador API TheAudioDB & Chartlyrics</title>
+</head>
+
+<body>
+    <h1>Buscador API TheAudioDB & Chartlyrics</h1>
+
+    <section id="search">
+        <label for="audiodb-search">Cantante:</label>
+        <input id="audiodb-search" value="Coldplay" type="search" class="audiodb">
+        <br>
+        <label for="lyrics-search">Título:</label>
+        <input id="lyrics-search" value="Clocks" type="search" class="lyrics">
+        <br>
+        <button id="btn-search">Buscar</button>
+    </section>
+    <main>
+        <section><h3 class="title">Cantante</h3><div class="cantante"></div></section>
+        <section><h3 class="title">Letra</h3><div class="letra"></div></section>
+    </main>
+    <script src="scripts/main.js" type="text/javascript" type="module"></script>
+</body>
+
+</html>
