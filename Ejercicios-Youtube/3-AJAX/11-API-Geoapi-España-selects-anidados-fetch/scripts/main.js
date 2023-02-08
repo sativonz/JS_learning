@@ -21,9 +21,7 @@ app.controller('MainCtrl', function($scope, $timeout, GeoAPI){
        
         $comunidad.innerHTML =  `<option value="selecciona">Selecciona</option>${$template}`;
 
-    }).catch(err => {
-        console.log('Error: ', err);
-    });
+    })
 
     $comunidad.addEventListener("change", e =>{
         $poblacion.innerHTML =  `<option value="selecciona">Selecciona</option>`;
@@ -38,9 +36,7 @@ app.controller('MainCtrl', function($scope, $timeout, GeoAPI){
                 $template += `<option data-id="${provincia.CPRO}" value="${provincia.PRO}">${provincia.PRO}</option>`;
             });
             $provincia.innerHTML =  `<option value="selecciona">Selecciona</option>${$template}`;
-        }).catch(err => {
-            console.log('Error: ', err);
-        });
+        })
     });
 
     $provincia.addEventListener("change", e =>{
@@ -55,9 +51,7 @@ app.controller('MainCtrl', function($scope, $timeout, GeoAPI){
                 $template += `<option data-id="${municipio.CMUM}" value="${municipio.DMUN50}">${municipio.DMUN50}</option>`;
             });
             $municipio.innerHTML =  `<option value="selecciona">Selecciona</option>${$template}`;
-        }).catch(err => {
-            console.log('Error: ', err);
-        });
+        })
     });
 
     $municipio.addEventListener("change", e =>{
@@ -72,9 +66,7 @@ app.controller('MainCtrl', function($scope, $timeout, GeoAPI){
                 $template += `<option value="${poblacion.NENTSI50}">${poblacion.NENTSI50}</option>`;
             });
             $poblacion.innerHTML =  `<option value="selecciona">Selecciona</option>${$template}`;
-        }).catch(err => {
-            console.log('Error: ', err);
-        });
+        })
     });
 
 }); 
