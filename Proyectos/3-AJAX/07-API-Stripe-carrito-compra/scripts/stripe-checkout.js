@@ -22,6 +22,22 @@ async function displayData() {
 }
 */
 
+/*Ejemplo Promise.all en variables con destructuración y sin necesidad de hacer reject en la promesa
+try {
+let artistFetch = fetch(urlAPI),
+    songFetch = fetch(urlAPI),
+    [artistRes, songRes] = await Promise.all([artistFetch, songFetch]),
+    artistData = await artistRes.json(),
+    songData = await songRes.json();
+    //
+} catch (err) {
+    console.log(err);
+    let message = err.statusText || "Ocurrión un error";
+    $tacos.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+}
+
+*/
+
 import stripeKeys from "../scripts/stripe-keys.js";
 import STRIPE_KEYS from "../scripts/stripe-keys.js"
 

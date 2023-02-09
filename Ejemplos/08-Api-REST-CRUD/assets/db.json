@@ -1,9 +1,9 @@
 {
   "santos": [
     {
-      "id": 11,
-      "nombre": "Shaka",
-      "constelacion": "Virgo"
+      "nombre": "Shakar",
+      "constelacion": "Virgo",
+      "id": 11
     },
     {
       "id": 12,
@@ -64,11 +64,6 @@
       "nombre": "asfas",
       "constelacion": "jrhjrjrt",
       "id": 36
-    },
-    {
-      "nombre": "Santo1",
-      "constelacion": "ajsfoiasdf",
-      "id": 37
     }
   ],
   "dioses": [
