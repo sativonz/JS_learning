@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.none {
+    display: none;
+}
+
+.loader {
+    display: block;
+    margin: auto;
+}
+
+body > h1 {
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+}
+
+article#site, section#posts {
+    margin: 0 20px 0 20px;
+}
+
+#posts article.post aside h2 {
+    margin: 10px 0 10px 0;
+}
+
+article.post img.post-image {
+    width: 100%;
+}
+
+article.post a.post-link {
+    font-size: 14px;
+}
+
+article.post figure.post-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    margin: 0;
+}
+
+article.post aside {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+article.post p.post-excerpt,
+article.post p.post-excerpt p {
+    margin: 0;
+    font-size: 14px;
+}
+
+article.post .post-categories ul,
+article.post .post-tags ul {
+    margin: 0 0 0 10px;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    display: flex;
+    font-style: italic;
+}
+
+article.post .post-categories,
+article.post .post-tags {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+article.post .post-categories p,
+article.post .post-tags p {
+    margin: 0;
+}
+
+article.post details summary::after {
+    content: attr(data-open);
+    opacity: 0;
+    font-size: 1px;
+}
+
+article.post details[open] summary::after {
+    content: attr(data-open);
+    opacity: 1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+article.post details summary::before {
+    content: attr(data-close);
+    opacity: 0;
+}
+
+article.post details:not([open]) summary::before {
+    content: attr(data-close);
+    opacity: 1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+article.post details summary::after,
+article.post details summary::before {
+    display: inline-block;
+    transition: opacity .1s ease-in-out;
+    transition: font-size .1s ease-in-out;
+    transform-origin: center bottom;
+}
+
+article.post details[open] summary::before{
+    width: 0;
+    font-size: 0;
+} 
+
+article.post {
+    margin-bottom: 20px;
+    background: #e3e3e3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+article.post details summary {
+    cursor: pointer;
+}
+
+article.post .post-author-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+article#site * {
+    margin: 0;
+}
+
+article#site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 20px 0;
+}
+
+article#site p {
+    font-weight: bold;
+}
+
+article.post figure.post-author img {
+    border-radius: 50%;
+    width: 24px;
+}

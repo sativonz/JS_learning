@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>WordPress REST API con Fetch</title>
+</head>
+
+<body ng-app="app">
+    <h1>WordPress REST API con Fetch</h1>
+    <article id="site" class="site"></article>
+    <section id="posts" class="posts"></section>
+    <img src="./assets/loader.svg" alt="Cargando..." class="loader"/>
+    <template id="post-template">
+        <article class="post">
+            <img class="post-image">
+            <aside>
+                <h2 class="post-title"></h2>
+                <div class="post-author-section">
+                    <figure class="post-author"></figure>
+                    <small class="post-date"></small>
+                </div>
+                <a target="_blank" class="post-link">Ver publicación original</a>
+                <p class="post-excerpt"></p>
+                <div class="post-categories"></div>
+                <div class="post-tags"></div>
+                <details class="post-content">
+                    <summary data-open="Ocultar contenido del post" data-close="Ver contenido del post"></summary>
+                    <article></article>
+                </details>
+            </aside>
+        </article>
+    </template>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
