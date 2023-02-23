@@ -19,10 +19,11 @@ const obj = {
 saludar.call(obj, "Hola", "Jon");
 saludar.call(null, "Hola", "Jon");
 saludar.call(this, "Hola", "Jon");
-
+console.log('///////////////////////////////////////');
 saludar.apply(obj, ["Adios", "MirCha"]);
 saludar.apply(null, ["Adios", "MirCha"]);
 saludar.apply(this, ["Adios", "MirCha"]);
+console.log('///////////////////////////////////////');
 
 this.nombre = "Window";
 
@@ -34,6 +35,7 @@ const persona = {
 };
 
 persona.saludar();
+console.log('///////////////////////////////////////');
 
 const otraPersona = {
   saludar: persona.saludar.bind(this),
@@ -41,8 +43,11 @@ const otraPersona = {
 console.log('Bindeado con this');
 otraPersona.saludar();
 
+console.log('///////////////////////////////////////');
+
 const otraPersona2 = {
   saludar: persona.saludar.bind(persona),
 };
 console.log('Bindeado al objeto');
 otraPersona2.saludar();
+
