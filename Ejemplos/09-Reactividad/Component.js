@@ -14,7 +14,7 @@ export default class Component {
       if (!$el) return;
       $el.innerHTML = this.template(this.data);
     
-      console.log(this.data);
+      console.log("data", this.data);
     }
     
     //Actualizar el State de forma reactiva

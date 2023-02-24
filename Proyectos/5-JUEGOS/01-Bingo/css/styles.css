@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.carton-player, .carton-cpu {
+    width: 100%;
+}
+
+section#drum-cartons {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+img.img-bombo {
+    width: 100%;
+}
+
+section#drum-cartons h3 {
+    text-align: center;
+}
+
+button.get-number {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    height: 40px;
+}
+
+.player-carton, 
+.cpu-carton {
+    width: 100%;
+    margin: 60px;
+    border: 2px solid black;
+}
+
+section#drum-numbers {
+    width: calc(100% - 120px);
+    border: 2px solid black;
+    padding: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.drum {
+    position: relative;
+    max-width: 350px;
+    min-width: 150px;
+}
+
+.player-carton .player-numbers,
+.cpu-carton .cpu-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+}
+
+.player-carton .player-numbers div,
+.cpu-carton .cpu-numbers div {
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+section#drum-numbers .drum-number {
+    padding: 20px;
+    border: 1px solid orange;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.player-numbers .player-number.geted,
+.cpu-numbers .cpu-number.geted {
+    text-decoration: line-through;
+    font-weight: bold;
+    color: red;
+}
+
+.cpu-carton.win,
+.player-carton.win {
+    background: #89ff89;
+    position: relative;
+}
