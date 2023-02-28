@@ -30,8 +30,7 @@ let fibra_values = [];
 
 fibra_tarifa.forEach((element, index) => {
   fibra_values[index] = Object.values(element);
-  //contenedorFibraUL.innerHTML += `<li data-price="${fibra_values[index][1]}" data-name="${fibra_values[index][0]}">${fibra_values[index][0]}</li>`;
-  contenedorFibraUL.insertAdjacentHTML("afterbegin", `<li data-price="${fibra_values[index][1]}" data-name="${fibra_values[index][0]}">${fibra_values[index][0]}</li>`);
+  contenedorFibraUL.insertAdjacentHTML("afterbegin", `<li data-price="${fibra_values[index][1]}" data-name="${fibra_values[index][0]}">${fibra_values[index][0]} - ${fibra_values[index][1]}€</li>`);
 });
 
 /////MOVIL
@@ -46,7 +45,7 @@ let movil_values = [];
 
 movil_tarifa.forEach((element, index) => {
   movil_values[index] = Object.values(element);
-  contenedorMovilUL.innerHTML += `<li data-price="${movil_values[index][1]}" data-name="${movil_values[index][0]}">${movil_values[index][0]}</li>`;
+  contenedorMovilUL.innerHTML += `<li data-price="${movil_values[index][1]}" data-name="${movil_values[index][0]}">${movil_values[index][0]} - ${movil_values[index][1]}€</li>`;
 });
 
 /////TELEVISION
@@ -61,7 +60,7 @@ let tv_values = [];
 
 tv_tarifa.forEach((element, index) => {
   tv_values[index] = Object.values(element);
-  contenedorTVUL.innerHTML += `<li data-price="${tv_values[index][1]}" data-name="${tv_values[index][0]}">${tv_values[index][0]}</li>`;
+  contenedorTVUL.innerHTML += `<li data-price="${tv_values[index][1]}" data-name="${tv_values[index][0]}">${tv_values[index][0]} - ${tv_values[index][1]}€</li>`;
 });
 
 const totalPriceFibra = document.querySelector(".container-total-fibra"),

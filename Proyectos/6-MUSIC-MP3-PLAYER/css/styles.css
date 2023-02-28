@@ -1,0 +1,391 @@
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.hide {
+    display: none!important;
+}
+
+svg.svg_ico {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    cursor: pointer;
+}
+
+svg.svg_ico.playlist_add {
+    position: absolute;
+    top: 0px;
+    right: 6px;
+    color: white;
+    width: 35px;
+    height: 35px;
+}
+
+svg.svg_ico.previous.last,
+svg.svg_ico.next.last {
+    color: grey;
+    cursor: default;
+}
+
+main#player-mp3-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+main#player-mp3-box section#art-box {
+    border: 1px solid black;
+    width: 315px;
+    height: 400px;
+    position: relative;
+}
+
+main#player-mp3-box section#controls-box {
+    height: 150px;
+    border: 1px solid grey;
+    width: 315px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+main#player-mp3-box section#status-box {
+    height: 20px;
+    width: 315px;
+}
+
+main#player-mp3-box section#art-box img.art-box-img {
+    width: 100%;
+    height: 100%;
+}
+
+main#player-mp3-box .controls .svg_ico {
+    width: 35px;
+    height: 35px;
+}
+
+section#controls-box .name-song {
+    font-weight: bold;
+}
+
+.equalizer {
+    position: absolute;
+    bottom: 3px;
+}
+
+.equalizer.pause * {
+    animation-duration: 0s!important;
+}
+
+.equalizer .bar1, .equalizer .bar2, .equalizer .bar3, .equalizer .bar4, .equalizer .bar5, .equalizer .bar6, .equalizer .bar7, .equalizer .bar8, .equalizer .bar9 {
+    width: 30px;
+    height: 5px;
+    background: #29d9c2;
+    position: relative;
+    
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2, 0 -4px 0 #29d9c2;
+    animation-name: bar1;
+    animation-duration: 0.3s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.equalizer .bar1 {
+    content: '';
+    position: absolute;
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    transform: translate(3px, 0);
+    animation-name: bar2;
+}
+
+.equalizer .bar2 {
+    content: '';
+    position: absolute;
+    transform: translate(40px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar3;
+}
+
+.equalizer .bar3 {
+    content: '';
+    position: absolute;
+    transform: translate(80px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar4;
+}
+
+.equalizer .bar4 {
+    content: '';
+    position: absolute;
+    transform: translate(120px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar5;
+}
+
+.equalizer .bar5 {
+    content: '';
+    position: absolute;
+    transform: translate(160px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar6;
+}
+
+.equalizer .bar6 {
+    content: '';
+    position: absolute;
+    transform: translate(160px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar6;
+}
+
+.equalizer .bar7 {
+    content: '';
+    position: absolute;
+    transform: translate(200px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar7;
+}
+
+.equalizer .bar8 {
+    content: '';
+    position: absolute;
+    transform: translate(240px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar8;
+}
+
+.equalizer .bar9 {
+    content: '';
+    position: absolute;
+    transform: translate(280px, 0);
+    box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #29d9c2, 0 -30px 0 #29d9c2;
+    animation-name: bar9;
+}
+
+#art-box .total-time {
+    position: absolute;
+    right: 5px;
+    bottom: -20px;
+    font-size: 14px;
+    font-family: revert;
+}
+
+#art-box .actual-time {
+    position: absolute;
+    left: 5px;
+    bottom: -20px;
+    font-size: 14px;
+    font-family: revert;
+}
+
+#status-box progress {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+    top: -8px;
+    height: 10px;
+}
+
+#status-box progress {
+    color: grey;
+}
+  
+#status-box progress::-moz-progress-bar {
+    background: #cdcdcd;
+}
+
+#status-box progress::-webkit-progress-value {
+    background: grey;
+}
+
+#status-box progress::-webkit-progress-bar {
+    background: #cdcdcd;
+}
+
+@keyframes bar1 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    80%, 100% {
+        box-shadow: none;
+   }
+}
+
+@keyframes bar2 {
+    0%, 19.9% {
+        box-shadow: none;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    80%, 100% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+}
+
+@keyframes bar3 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    80%, 100% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+}
+
+@keyframes bar4 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    80%, 100% {
+        box-shadow: none;
+   }
+}
+
+@keyframes bar5 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    80%, 100% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+}
+
+@keyframes bar6 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    80%, 100% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+}
+
+@keyframes bar7 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    80%, 100% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+}
+
+@keyframes bar8 {
+    0%, 19.9% {
+        box-shadow: none;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    80%, 100% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+}
+
+@keyframes bar9 {
+    0%, 19.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a, 0 -40px 0 #ff3b77;
+   }
+    20%, 39.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d, 0 -30px 0 #ca638a;
+   }
+    40%, 59.9% {
+        box-shadow: 0 -10px 0 #29d9c2, 0 -20px 0 #948a9d;
+   }
+    60%, 79.9% {
+        box-shadow: 0 -10px 0 #29d9c2;
+   }
+    80%, 100% {
+        box-shadow: none;
+   }
+}
+

@@ -1,0 +1,29 @@
+{
+    "name": "MP3 Player",
+    "songs": [
+        {
+            "name": "Drake - God's Plan",
+            "artist": "Drake",
+            "img": "./assets/img-drake.jpg",
+            "url": "./assets/drake-godsplan.mp3"
+        },
+        {
+            "name": "Dua Lipa - Levitating",
+            "artist": "Dua Lipa",
+            "img": "./assets/img-dualipa.jpg",
+            "url": "./assets/dualipa-levitating.mp3"
+        },
+        {
+            "name": "Kase O y SFDK - Ringui Dingui",
+            "artist": "Kase O y SFDK",
+            "img": "./assets/img-kaseo.jpg",
+            "url": "./assets/kaseo-sfdk-ringui-dingui.mp3"
+        },
+        {
+            "name": "Eminem - Love Yourself",
+            "artist": "Eminem",
+            "img": "./assets/img-eminem.jpg",
+            "url": "./assets/eminem-loveyourself.mp3"
+        }
+    ]
+}

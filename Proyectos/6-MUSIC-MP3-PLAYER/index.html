@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Music MP3 Player</title>
+</head>
+<body>
+    <main id="player-mp3-box">
+            <section id="art-box">
+                <img src="" class="art-box-img">
+                <svg class="svg_ico playlist_add"> <use href="#playlist_add"></use></svg>
+                <div class="equalizer hide">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div class="bar4"></div>
+                    <div class="bar5"></div>
+                    <div class="bar6"></div>
+                    <div class="bar7"></div>
+                    <div class="bar8"></div>
+                    <div class="bar9"></div>
+                </div>
+                <span class="actual-time hide">00:00</span>
+                <span class="total-time"></span>
+            </section>
+            <section id="controls-box">
+                <div class="name-song"> </div>
+                <div class="artist-song"> </div>
+                <div class="controls">
+                    <svg class="svg_ico previous last"> <use class="previous" href="#skip_previous"></use></svg>
+                    <svg class="svg_ico play"><use class="play" href="#play_arrow"></use></svg>
+                    <svg class="svg_ico pause hide"><use class="pause" href="#pause"></use></svg>
+                    <svg class="svg_ico next"> <use class="next" href="#skip_next"></use></svg>
+                </div>
+                
+            </section>
+            <section id="status-box">
+                <progress class="progress-bar-mp3" value="0" max="0"></progress>
+            </section>
+    </main>
+    
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
