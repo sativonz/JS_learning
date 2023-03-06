@@ -209,9 +209,7 @@ section#controls-box .name-song {
     position: relative;
     top: -8px;
     height: 10px;
-}
-
-#status-box progress {
+    cursor: pointer;
     color: grey;
 }
   
@@ -226,6 +224,36 @@ section#controls-box .name-song {
 #status-box progress::-webkit-progress-bar {
     background: #cdcdcd;
 }
+
+#art-box ul.playlist {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    opacity: 0;
+    transition: transform 0.5s linear;
+    visibility: hidden;
+    background: #f0f0f0;
+    padding: 20px 20px 10px 40px;
+    margin: 0;
+}
+
+#art-box ul.playlist.open {
+    transform: translate(271px, -1px);
+    opacity: 1;
+    visibility: visible;
+}
+
+#art-box ul.playlist.open li {
+    list-style: number;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    font-size: 15px;
+    color: #393939;
+    cursor: pointer;
+}
+
+
 
 @keyframes bar1 {
     0%, 19.9% {

@@ -12,8 +12,10 @@ const d = document,
     $equalizer = d.querySelector(".equalizer"),
     $progressBar = d.querySelector(".progress-bar-mp3");
 
+
 let nextSong = 0,
-    progressBarCT;
+    progressBarCT,
+    setIntervalTime;
 
 const fetchSongs = async () => {
     try {
@@ -46,14 +48,29 @@ const loadSongs = async () => {
     };
     xhr.send();
 
-    let actualAudio = new Audio(url),
-        setIntervalCurrent;
+    let actualAudio = new Audio(url);
 
     const songsLength = data.songs.length;
 
     $artBoxIMG.src = img;
     $controlsBox.querySelector(".name-song").innerHTML = name;
     $controlsBox.querySelector(".artist-song").innerHTML = artist;
+
+    let $ul = document.createElement("ul"),
+        $fragment = d.createDocumentFragment(),
+        playlistIndex = 0;
+
+    $ul.classList.add("playlist"),
+    data.songs.forEach(song => {
+        const $li = document.createElement("li");
+        $li.textContent = song.name;
+        $li.dataset.id = playlistIndex;
+        $fragment.appendChild($li);
+        playlistIndex++;
+    });
+
+    $ul.appendChild($fragment);
+    $artBox.appendChild($ul);
 
     const getCurrentTime = () => {
         const currentTime = actualAudio.currentTime,
@@ -63,7 +80,7 @@ const loadSongs = async () => {
             formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
         $actualTime.innerHTML = formattedTime;
     }
-
+    
     const progressBarCurrentTime = () => {
         if($progressBar.value == $progressBar.max){
                 clearInterval(progressBarCT);
@@ -89,41 +106,38 @@ const loadSongs = async () => {
         let totalMinutes = Math.floor(actualAudio.duration / 60),
             totalSeconds = Math.floor(actualAudio.duration - totalMinutes * 60),
             totalTime = totalMinutes + ':' + totalSeconds;
-        $totalTime.innerHTML = totalTime;
+        if (totalTime != NaN)  $totalTime.innerHTML = totalTime;
+      
     }
 
-    async function playMusic() {
-        getTotalTime();
-        setIntervalCurrent = setInterval(getCurrentTime, 500);
-        if ($equalizer.classList.contains("pause")) $equalizer.classList.remove("pause");
+    async function playMusic() { 
+        $totalTime.innerHTML = "";
+        clearInterval(setIntervalTime);
+        if ($equalizer.classList.contains("pause")) $equalizer.classList.remove("pause"); 
+        setIntervalTime = setInterval(getCurrentTime, 500);
         await actualAudio.play();
         $actualTime.classList.remove("hide");
-        
-        
         $play.classList.add("hide");
         $equalizer.classList.remove("hide");
         $pause.classList.remove("hide");
         $actualTime.classList.remove("hide");
-        
-
+        getTotalTime();
     }
 
-    const playNextSong = () =>{
+    const playNextSong = () => {
         if ($previous.classList.contains('last')) $previous.classList.remove('last');
             if (nextSong + 1 < songsLength) {
                 $actualTime.innerHTML = "";
                 $totalTime.innerHTML = "";
                 $actualTime.classList.add("hide")
                 $equalizer.classList.add("pause");
-                clearInterval(setIntervalCurrent)
-                
-                
+                clearInterval(setIntervalTime);
+                clearInterval(progressBarCT);
                 actualAudio.pause();
                 actualAudio.currentTime = 0;
                 nextSong++;
                 actualAudio = new Audio(data.songs[nextSong].url);
                 actualAudio.addEventListener("canplaythrough", () => { if ($play.classList.contains('hide')){
-                    setIntervalCurrent = setInterval(getCurrentTime, 500);
                     playMusic();
                     $actualTime.classList.remove("hide")
                 }}) 
@@ -131,6 +145,7 @@ const loadSongs = async () => {
                 $controlsBox.querySelector(".name-song").innerHTML = data.songs[nextSong].name;
                 $controlsBox.querySelector(".artist-song").innerHTML = data.songs[nextSong].artist;
                 if (nextSong == songsLength - 1) $next.classList.add("last");
+                progressBarCT = setInterval(progressBarCurrentTime, 1000);
             }
     }
 
@@ -157,7 +172,7 @@ const loadSongs = async () => {
             actualAudio.pause();
             $pause.classList.add("hide");
             $play.classList.remove("hide");
-            clearInterval(setIntervalCurrent)
+            clearInterval(setIntervalTime)
         }
 
         if (e.target.matches(".next")) playNextSong();
@@ -169,14 +184,12 @@ const loadSongs = async () => {
                 $actualTime.classList.add("hide")
                 $equalizer.classList.add("pause");
                 if ($next.classList.contains('last')) $next.classList.remove('last');
-                clearInterval(setIntervalCurrent)
-                
+                clearInterval(setIntervalTime);
                 actualAudio.pause();
                 actualAudio.currentTime = 0;
                 nextSong--;
                 actualAudio = new Audio(data.songs[nextSong].url);
                 actualAudio.addEventListener("canplaythrough", () => { if ($play.classList.contains('hide')) {
-                    setIntervalCurrent = setInterval(getCurrentTime, 500);
                     playMusic();
                     $actualTime.classList.remove("hide")
                 }});
@@ -186,6 +199,34 @@ const loadSongs = async () => {
                 if (nextSong == 0) $previous.classList.add("last");
             }
         }
+
+        if(e.target.matches(".playlist_add") || e.target.matches(".playlist_add use") ){
+
+            
+            let $playlist = d.querySelector(".playlist"),
+                $playlistDisplay =  getComputedStyle($playlist).getPropertyValue("visibility");
+        
+                if ($playlistDisplay === 'hidden') $playlist.classList.add("open");
+                else $playlist.classList.remove("open");     
+        }
+       
+        if(e.target.matches(".playlist li")){
+            nextSong = parseInt(e.target.dataset.id);
+            if (nextSong == 0) $previous.classList.add("last"), $next.classList.remove("last");
+            else if  (nextSong == songsLength - 1) $next.classList.add("last"),$previous.classList.remove("last")
+            else if (nextSong != songsLength - 1 || nextSong != 0) $next.classList.remove("last"),$previous.classList.remove("last");
+            clearInterval(setIntervalTime);
+            clearInterval(progressBarCT);
+            actualAudio.pause();
+            actualAudio.currentTime = 0;
+            actualAudio = new Audio(data.songs[e.target.dataset.id].url);
+            playMusic();
+            $artBoxIMG.src = data.songs[e.target.dataset.id].img;
+            $controlsBox.querySelector(".name-song").innerHTML = data.songs[e.target.dataset.id].name;
+            $controlsBox.querySelector(".artist-song").innerHTML = data.songs[e.target.dataset.id].artist;
+            progressBarCT = setInterval(progressBarCurrentTime, 1000);
+        }
+
     })
 }
 
