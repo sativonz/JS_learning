@@ -70,7 +70,7 @@ main#player-mp3-box section#controls-box {
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 main#player-mp3-box section#status-box {
