@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pac-Man</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <script>
+        // Configuración del juego
+        var gridSize = 20;
+        var rows = 20;
+        var cols = 20;
+        var speed = 100;
+        var score = 0;
+
+        // Inicialización de la posición de Pac-Man
+        var pacMan = {
+            x: Math.floor(cols / 2),
+            y: Math.floor(rows / 2),
+            direction: 'right'
+        };
+
+        // Inicialización de la posición de los fantasmas
+        var ghosts = [
+            { x: 1, y: 1, direction: 'right' },
+            { x: cols - 2, y: 1, direction: 'down' },
+            { x: 1, y: rows - 2, direction: 'right' },
+            { x: cols - 2, y: rows - 2, direction: 'up' }
+        ];
+
+        // Inicialización del tablero de juego
+        var board = [];
+        for (var i = 0; i < rows; i++) {
+            var row = [];
+            for (var j = 0; j < cols; j++) {
+                if ((i == pacMan.y) && (j == pacMan.x)) {
+                    row.push('pac-man');
+                } else {
+                    row.push('empty');
+                }
+            }
+            board.push(row);
+        }
+
+        // Dibujo del tablero de juego
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var cellSize = gridSize - 1;
+
+        function drawBoard() {
+            for (var i = 0; i < rows; i++) {
+                for (var j = 0; j < cols; j++) {
+                    if (board[i][j] == 'pac-man') {
+                        context.fillStyle = 'yellow';
+                        context.fillRect(j * gridSize, i * gridSize, cellSize, cellSize);
+                    } else if (board[i][j] == 'ghost') {
+                        context.fillStyle = 'red';
+                        context.fillRect(j * gridSize, i * gridSize, cellSize, cellSize);
+                    } else if (board[i][j] == 'coin') {
+                        context.fillStyle = 'white';
+                        context.beginPath();
+                        context.arc(j * gridSize + gridSize / 2, i * gridSize + gridSize / 2, gridSize / 4, 0, Math.PI * 2);
+                        context.fill();
+                    }
+                }
+            }
+        }
+
+        // Detección de colisiones con fantasmas
+        function checkCollisions() {
+            for (var i = 0; i < ghosts.length; i++) {
+                if ((pacMan.x == ghosts[i].x) && (pacMan.y == ghosts[i].y)) {
+                    alert('Game over! Score: ' + score);
+                    clearInterval(gameLoop);
+                }
+            }
+        }
+
+        // Movimiento de Pac-Man y los fantasmas
+        function move() {
+            // Movimiento de Pac-Man
+            if (pacMan.direction == 'right') {
+                pacMan.x++;
+            } else if (pacMan.direction == 'left') {
+                pacMan.x--;
+            } else if (pacMan.direction == 'up') {
+                pacMan.y--;
+            } else if (pacMan.direction == 'down') {
+                pacMan.y++;
+            }
+        
+
+        // Detección de colisiones con las monedas
+        if (board[pacMan.y][pacMan.x] == 'coin') {
+            board[pacMan.y][pacMan.x] = 'empty';
+            score++;
+        }
+
+        // Movimiento de los fantasmas
+        for (var i = 0; i < ghosts.length; i++) {
+            if (ghosts[i].direction == 'right') {
+                ghosts[i].x++;
+            } else if (ghosts[i].direction == 'left') {
+                ghosts[i].x--;
+            } else if (ghosts[i].direction == 'up') {
+                ghosts[i].y--;
+            } else if (ghosts[i].direction == 'down') {
+                ghosts[i].y++;
+            }
+
+            // Cambio de dirección de los fantasmas al chocar contra una pared
+            if (board[ghosts[i].y][ghosts[i].x] != 'empty') {
+                var directions = ['right', 'left', 'up', 'down'];
+                var newDirection = directions[Math.floor(Math.random() * directions.length)];
+                ghosts[i].direction = newDirection;
+            }
+        }
+
+        // Detección de colisiones con los fantasmas
+        checkCollisions();
+
+        // Actualización del tablero de juego
+        for (var i = 0; i < rows; i++) {
+            for (var j = 0; j < cols; j++) {
+                if ((i == pacMan.y) && (j == pacMan.x)) {
+                    board[i][j] = 'pac-man';
+                } else {
+                    board[i][j] = 'empty';
+                }
+            }
+        }
+
+        for (var i = 0; i < ghosts.length; i++) {
+            board[ghosts[i].y][ghosts[i].x] = 'ghost';
+        }
+
+        for (var i = 0; i < rows; i++) {
+            for (var j = 0; j < cols; j++) {
+                if (board[i][j] == 'empty') {
+                    context.clearRect(j * gridSize, i * gridSize, cellSize, cellSize);
+                } else if (board[i][j] == 'pac-man') {
+                    context.fillStyle = 'yellow';
+                    context.fillRect(j * gridSize, i * gridSize, cellSize, cellSize);
+                } else if (board[i][j] == 'ghost') {
+                    context.fillStyle = 'red';
+                    context.fillRect(j * gridSize, i * gridSize, cellSize, cellSize);
+                } else if (board[i][j] == 'coin') {
+                    context.fillStyle = 'white';
+                    context.beginPath();
+                    context.arc(j * gridSize + gridSize / 2, i * gridSize + gridSize / 2, gridSize / 4, 0, Math.PI * 2);
+                    context.fill();
+                }
+            }
+        }
+    }
+
+        // Generación aleatoria de monedas
+        function generateCoins() {
+            for (var i = 0; i < rows; i++) {
+                for (var j = 0; j < cols; j++) {
+                    if (board[i][j] == 'empty') {
+                        if (Math.random() < 0.2) {
+                            board[i][j] = 'coin';
+                        }
+                    }
+                }
+            }
+        }
+
+
+        // Eventos de teclado para mover a Pac-Man
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 37) {
+                pacMan.direction = 'left';
+            } else if (event.keyCode == 38) {
+                pacMan.direction = 'up';
+            } else if (event.keyCode == 39) {
+                pacMan.direction = 'right';
+            } else if (event.keyCode == 40) {
+                pacMan.direction = 'down';
+            }
+        });
+
+        // Bucle principal del juego
+        var gameLoop = setInterval(function () {
+            move();
+            drawBoard();
+            generateCoins();
+        }, speed);
+
+    </script>
+</body>
